@@ -1,5 +1,5 @@
 # Block Cipher Encryption and Decryption (Java)
-<img src="https://i.pinimg.com/originals/4e/7c/8c/4e7c8c48cc82a3a4c5fad232542c9a17.gif"></img>
+<img src="https://i.pinimg.com/originals/b3/9d/00/b39d004739a48bcc60f771089bb7ecd3.gif"></img>
 ## Overview
 
 This project demonstrates a **basic block cipher encryption and decryption system** implemented in **Java**.
