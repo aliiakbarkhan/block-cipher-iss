@@ -51,8 +51,8 @@ public class blockCipher {
             int asciiValue = (int) ch;
             bi.append(String.format("%8s",Integer.toBinaryString(asciiValue)).replace(' ', '0'));
         }
-        System.out.println("real string: "+st);
-        System.out.println("binary string: "+bi);
+        System.out.println("Real String: "+st);
+        System.out.println("Binary String: "+bi);
 
         
         StringBuilder bt = new StringBuilder(bi);
@@ -66,11 +66,11 @@ public class blockCipher {
         bt.insert(mid, " ");
         StringBuilder first = new StringBuilder(bt.substring(0, mid));//as it is
         StringBuilder second = new StringBuilder(bt.substring(mid+1, bt.length()));//one with operations
-        System.out.println("First: "+bt);
-        System.out.println("ONE Part: "+first);
-        System.out.println("TWO Part: "+second);
+        // System.out.println("First: "+bt);
+        // System.out.println("ONE Part: "+first);
+        // System.out.println("TWO Part: "+second);
         bt.replace(0, mid, second.toString());
-        System.out.println("After Replace: "+bt);
+        // System.out.println("After Replace: "+bt);
         int randomNum = (int)(Math.random() * 2);
         char[] chars = first.toString().toCharArray();
         StringBuilder key = new StringBuilder();
@@ -81,7 +81,9 @@ public class blockCipher {
         }
         StringBuilder combo = oprationFun(first, second, key);
         bt.replace(mid+1, bt.length(), combo.toString());
-        System.out.println("After Function: "+bt);
+        StringBuilder temp_bt = new StringBuilder(bt);
+        temp_bt.deleteCharAt(mid);
+        System.out.println("Encrypted String: "+ binaryToString(temp_bt));
         
         //decreption
         StringBuilder first2 = new StringBuilder(bt.substring(0, mid));//as it is
@@ -93,7 +95,7 @@ public class blockCipher {
         if (padded) {
             bt.deleteCharAt(bt.length() - 1);
         }
-        System.out.println("Final: "+bt);
+        System.out.println("Fina Binary Code: "+bt);
         String recoveredText = binaryToString(bt);
         System.out.println("Recovered String: " + recoveredText);
         scn.close();
